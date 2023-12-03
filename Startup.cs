@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 using Site_Venda_Lanche.Context;
 using Site_Venda_Lanche.Models;
 using Site_Venda_Lanche.Repositories;
@@ -20,7 +19,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddDbContext<AppDbContext>(options =>
-                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
@@ -31,6 +30,7 @@ public class Startup
 
         services.AddMemoryCache();
         services.AddSession();
+
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,9 +58,9 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllerRoute(
-                name: "categoriaFiltro",
-                pattern: "Lanche/{action}/{categoria?}",
-                defaults: new { controller = "Lanche", action = "List" });
+               name: "categoriaFiltro",
+               pattern: "Lanche/{action}/{categoria?}",
+               defaults: new { Controller = "Lanche", action = "List" });
 
             endpoints.MapControllerRoute(
                 name: "default",

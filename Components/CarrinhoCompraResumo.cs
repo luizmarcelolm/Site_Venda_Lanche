@@ -4,26 +4,29 @@ using Site_Venda_Lanche.ViewModels;
 
 namespace Site_Venda_Lanche.Components
 {
-	public class CarrinhoCompraResumo : ViewComponent
-	{
-		private readonly CarrinhoCompra _carrinhoCompra;
+    public class CarrinhoCompraResumo : ViewComponent
+    {
+        private readonly CarrinhoCompra _carrinhoCompra;
 
-		public CarrinhoCompraResumo(CarrinhoCompra carrinhoCompra)
-		{
-			_carrinhoCompra = carrinhoCompra;
-		}
+        public CarrinhoCompraResumo(CarrinhoCompra carrinhoCompra)
+        {
+            _carrinhoCompra = carrinhoCompra;
+        }
 
-		public IViewComponentResult Invoke()
-		{
-			var itens = _carrinhoCompra.GetCarrinhoCompraItens();
-			_carrinhoCompra.CarrinhoCompraItens = itens;
+        public IViewComponentResult Invoke()
+        {
+            var itens = _carrinhoCompra.GetCarrinhoCompraItens();
+           
 
-			var carrinhoCompraVM = new CarrinhoCompraViewModel
-			{
-				CarrinhoCompra = _carrinhoCompra,
-				CarrinhoCompraTotal = _carrinhoCompra.GetCarrinhoCompraTotal()
-			};
-			return View(carrinhoCompraVM);
-		}
-	}
+            _carrinhoCompra.CarrinhoCompraItems = itens;
+
+            var carrinhoCompraVM = new CarrinhoCompraViewModel
+            {
+                CarrinhoCompra = _carrinhoCompra,
+                CarrinhoCompraTotal = _carrinhoCompra.GetCarrinhoCompraTotal()
+            };
+
+            return View(carrinhoCompraVM);
+        }
+    }
 }

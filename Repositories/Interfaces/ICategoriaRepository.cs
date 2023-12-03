@@ -2,8 +2,9 @@
 
 namespace Site_Venda_Lanche.Repositories.Interfaces
 {
-    public interface ICategoriaRepository
-    {
-        IEnumerable<Categoria> Categorias { get; }
-    }
+	public interface ICategoriaRepository
+	{
+		IEnumerable<Categoria> Categorias { get; }
+	}
 }
+

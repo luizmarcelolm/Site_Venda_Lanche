@@ -5,7 +5,7 @@ namespace Site_Venda_Lanche.TagHelpers
 	public class EmailTagHelper : TagHelper
 	{
 		public string Endereco { get; set; }
-		public string Conteudo { get; set; }	
+		public string Conteudo { get; set; }
 
 		public override void Process(TagHelperContext context, TagHelperOutput output)
 		{

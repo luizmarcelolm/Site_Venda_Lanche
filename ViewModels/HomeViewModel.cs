@@ -4,6 +4,6 @@ namespace Site_Venda_Lanche.ViewModels
 {
 	public class HomeViewModel
 	{
-		public IEnumerable<Lanche> LanchePreferidos { get; set; }
+		public IEnumerable<Lanche> LanchesPreferidos { get; set; }
 	}
 }
