@@ -1,6 +1,5 @@
-﻿using Microsoft.Build.Framework;
-using System.ComponentModel.DataAnnotations;
-using Xunit.Abstractions;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace Site_Venda_Lanche.ViewModels
 {
