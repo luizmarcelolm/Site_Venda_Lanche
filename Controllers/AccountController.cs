@@ -63,6 +63,7 @@ namespace Site_Venda_Lanche.Controllers
 
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, "Member");
                     return RedirectToAction("Login", "Account");
                 }
                 else
@@ -80,6 +81,11 @@ namespace Site_Venda_Lanche.Controllers
             HttpContext.User = null;
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
 
     }
